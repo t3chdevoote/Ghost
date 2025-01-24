@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Front-end vizsgamunka, 2025">
+    <meta name="keywords" content="HTML,  CSS, JS, Történeteitek"> 
+    <meta name="author" content="Tari Krisztián">
+  <title>Történeteitek</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="CSS\Történeteitek.css">
+</head>
+  <style>
+    @font-face {
+      font-family: Lora;
+      src: url(Font/Rubik_Wet_Paint/RubikWetPaint-Regular.ttf);
+    }
+
+    @font-face {
+      font-family: Caveit;
+      src: url(Font/Playfair/Playfair-Italic-VariableFont_opsz,wdth,wght.ttf);
+    }
+
+    body {
+      background-image: url("Home1.png");
+
+      }
+       
+
+  </style>
+</head>
+
+
+ 
+    <nav >
+      <div class="menu-toggle">
+        &equiv;
+      </div>
+     
+      <a href="Home.html"><img src="pngegg.png" alt="Ghosti"  ></a>
+      <div class="menu">
+        <div class="dropdown">
+          <a href="Kisértetek.html" class="dropbtn">Szellemek</a>
+          <div class="dropdown-content">
+            <a href="Kisértetek.html">Kísértet</a>
+            <a href="Poltergeist.html">Poltergeist</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="Ufok.html" class="dropbtn">Ufok</a>
+        </div>
+        <div class="dropdown">
+          <a href="Tárgyak.html" class="dropbtn">Tárgyak</a>
+        </div>
+        <div class="dropdown">
+          <a href="Galéria.html" class="dropbtn">Egyéb</a>
+          <div class="dropdown-content">
+            <a href="Galéria.html">Galéria</a>
+            <a href="Történeteitek.html">Történeteitek</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+ 
+  <body>
+    <form id="messageForm">
+      <h2>Van egy érdekes történeted? Oszd meg velünk, hiszen kíváncsiak vagyunk rá!</h2>
+      <label for="nickname">Nicknév:</label>
+      <input type="text" id="nickname" name="nickname" required>
+  
+      <label for="message">Üzenet:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+  
+      <button type="submit">Küldés</button>
+    </form>
+  
+    <div class="posts" id="postsContainer">
+    
+    </div>
+  
+  </body>
+<footer>
+  <div>
+    Email: <a href="mailto:tari.krisztian210@gmail.com">tari.krisztian210@gmail.com</a>
+    
+  </div>
+  <div>
+    <a href="https://www.instagram.com/" target="_blank">
+      <img src="—Pngtree—instagram icon_8704817.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/" target="_blank">
+      <img src="f5a06e413afecfb515c62f57e0a927a9.png" alt="Facebook">
+    </a>
+    <a href="https://x.com/" target="_blank">
+      <img src="64c2bb00cc53d81d58842318_og-twitter-x-768x432.png" alt="Twitter X">
+    </a>
+  </div>
+</footer>
+<script>
+
+
+  const form = document.getElementById('messageForm');
+  const postsContainer = document.getElementById('postsContainer');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    const nickname = document.getElementById('nickname').value;
+    const message = document.getElementById('message').value;
+
+    const post = document.createElement('div');
+    post.classList.add('post');
+
+    const postTitle = document.createElement('h3');
+    postTitle.textContent = nickname;
+    post.appendChild(postTitle);
+
+    const postMessage = document.createElement('p');
+    postMessage.textContent = message;
+    post.appendChild(postMessage);
+    postsContainer.appendChild(post);
+    
+    form.reset();
+  });
+  const menuButton = document.querySelector(".menu-toggle");
+        const menuItems = document.querySelectorAll("nav a");
+
+        menuButton.addEventListener("click", function () {
+            for (let menuItem of menuItems) {
+                menuItem.classList.toggle("open");
+            }
+        });
+  
+ 
+</script>
+
+</html>
